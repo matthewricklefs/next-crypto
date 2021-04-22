@@ -1,18 +1,15 @@
-import Head from "next/head";
 import CoinList from "../components/CoinList";
+import Layout from "../components/Layout";
 import Search from "../components/Search";
 
 export default function Home({ filteredCoins }) {
   return (
-    <div>
-      <Head>
-        <title>Next-Crypto</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <Search type="text" placeholder="Search" />
-      <CoinList filteredCoins={filteredCoins} />
-    </div>
+    <Layout>
+      <div className="coin_app">
+        <Search type="text" placeholder="Search" />
+        <CoinList filteredCoins={filteredCoins} />
+      </div>
+    </Layout>
   );
 }
 
